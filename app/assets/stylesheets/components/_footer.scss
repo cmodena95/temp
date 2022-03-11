@@ -1,0 +1,15 @@
+.footer {
+  background-color: $black;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  input {
+    border-radius: 0%;
+    border: none;
+    margin-right: 0.5rem;
+  }
+}
