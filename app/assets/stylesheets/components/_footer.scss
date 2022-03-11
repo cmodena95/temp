@@ -1,6 +1,7 @@
 .footer {
   background-color: $black;
   width: 100%;
+  padding: 2% 0 2% 0;
 
   ul {
     list-style: none;
@@ -11,5 +12,51 @@
     border-radius: 0%;
     border: none;
     margin-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer-newsletter {
+  text-align: right;
+}
+
+.footer-newletter-input {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    .container {
+      display: inline-block;
+    }
+  }
+
+  .footer-newsletter {
+    text-align: left;
+    margin-top: 2rem;
+
+    svg {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .footer-newletter-input {
+    display: block;
+    margin-bottom: 1rem;
+
+    input {
+      margin-bottom: 0.5rem;
+      height: 32px;
+    }
+
+    .btn-black {
+      width: 100%;
+    }
   }
 }

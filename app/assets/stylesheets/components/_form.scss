@@ -1,0 +1,9 @@
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+#description {
+  height: 12rem;
+}
