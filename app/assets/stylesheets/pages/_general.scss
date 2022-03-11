@@ -1,6 +1,3 @@
-@import "../components/colors";
-@import "../components/fonts";
-
 body {
   background-color: $black;
   color: $white;
@@ -8,6 +5,17 @@ body {
 
 h1, h2, h3 {
   font-family: $header-font;
+  text-shadow: 6px 6px 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 p, a {
@@ -21,5 +29,16 @@ a {
   &:hover {
     color: $white;
     text-decoration: none;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
