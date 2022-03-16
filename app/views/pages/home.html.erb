@@ -10,7 +10,7 @@
 <div class="d-flex">
   <div class="col-xs-12 col-lg-6">
     <div class="container-medium">
-      <h2 class="mt-5">Company information</h2>
+      <h2 class="mt-5 mb-4">Company information</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -31,9 +31,11 @@
   <div class="col-xs-12 col-lg-6 pr-4 pt-4">
     <% @properties.each do |property| %>
       <%= link_to property_path(property) do %>
-        <div class="property-card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path property.main_photo.key %>);">
-          <h3><%= property.title %></h3>
-          <p><%= property.description %></p>
+        <div class="property-card mb-4 d-flex flex-column justify-content-between" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= cl_image_path property.main_photo.key %>);">
+          <div>
+            <h3><%= property.title %></h3>
+            <p><%= property.description %></p>
+          </div>
 
           <ul>
             <li>

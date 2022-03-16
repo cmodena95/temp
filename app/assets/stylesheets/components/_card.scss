@@ -1,10 +1,12 @@
 .property-card {
-  height: auto;
+  height: 377px;
   width: 100%;
   padding: 2rem;
   background-size: cover;
   background-position: center;
   text-decoration: none !important;
+  position: relative;
+  transition:all .1s ease-in;
 
   p {
     margin: 0;
@@ -13,6 +15,7 @@
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
   }
 }
 
