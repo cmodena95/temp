@@ -12,4 +12,8 @@ class PropertyPolicy < ApplicationPolicy
   def create?
     @user.admin
   end
+  
+  def show?
+    true
+  end
 end

@@ -7,26 +7,72 @@
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="d-flex">
   <div class="col-xs-12 col-lg-6">
-    <h2 class="mb-4">Company information</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum.</p>
+    <div class="container-medium">
+      <h2 class="mt-5">Company information</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.</p>
 
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus
-      qui blanditiis praesentium voluptatum deleniti atque corrupti
-      quos dolores et quas molestias excepturi sint occaecati
-      cupiditate non provident, similique sunt in culpa qui officia
-      deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus
+        qui blanditiis praesentium voluptatum deleniti atque corrupti
+        quos dolores et quas molestias excepturi sint occaecati
+        cupiditate non provident, similique sunt in culpa qui officia
+        deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+    </div>
   </div>
 
-  <div class="col-xs-12 col-lg-6">
+  <div class="col-xs-12 col-lg-6 pr-4 pt-4">
+    <% @properties.each do |property| %>
+      <%= link_to property_path(property) do %>
+        <div class="property-card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path property.main_photo.key %>);">
+          <h3><%= property.title %></h3>
+          <p><%= property.description %></p>
 
+          <ul>
+            <li>
+              <p>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="transform: translate(-10%, 0px);" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d_32_114)">
+                  <path d="M16 2C12.13 2 9 5.13 9 9C9 14.25 16 22 16 22C16 22 23 14.25 23 9C23 5.13 19.87 2 16 2ZM11 9C11 6.24 13.24 4 16 4C18.76 4 21 6.24 21 9C21 11.88 18.12 16.19 16 18.88C13.92 16.21 11 11.85 11 9Z" fill="#EFEFEF"/>
+                  <path d="M16 11.5C16.663 11.5 17.2989 11.2366 17.7678 10.7678C18.2366 10.2989 18.5 9.66304 18.5 9C18.5 8.33696 18.2366 7.70107 17.7678 7.23223C17.2989 6.76339 16.663 6.5 16 6.5C15.337 6.5 14.7011 6.76339 14.2322 7.23223C13.7634 7.70107 13.5 8.33696 13.5 9C13.5 9.66304 13.7634 10.2989 14.2322 10.7678C14.7011 11.2366 15.337 11.5 16 11.5Z" fill="#EFEFEF"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_32_114" x="0" y="0" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_114" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+                <%= property.location %>
+              </p>
+            </li>
+            <li>
+              <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>attach_money</title><g fill="none"><path d="M11.5 17.1c-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79z" fill="#EFEFEF"></path></g></svg>
+                <%= property.price %>
+              </p>
+            </li>
+            <li>
+              <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>bathtub</title><g fill="none"><path d="M7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="#EFEFEF"></path><path d="M20 13V4.83C20 3.27 18.73 2 17.17 2c-.75 0-1.47.3-2 .83l-1.25 1.25c-.16-.05-.33-.08-.51-.08-.4 0-.77.12-1.08.32l2.76 2.76c.2-.31.32-.68.32-1.08 0-.18-.03-.34-.07-.51l1.25-1.25a.828.828 0 0 1 1.41.59V13h-6.85c-.3-.21-.57-.45-.82-.72l-1.4-1.55c-.19-.21-.43-.38-.69-.5A2.251 2.251 0 0 0 5 12.25V13H2v6c0 1.1.9 2 2 2 0 .55.45 1 1 1h14c.55 0 1-.45 1-1 1.1 0 2-.9 2-2v-6h-2zm0 6H4v-4h16v4z" fill="#EFEFEF"></path></g></svg>
+                <%= property.bathrooms %>
+              </p>
+            </li>
+            <li>
+              <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>king_bed</title><g fill="none"><path d="M22 12c0-1.1-.9-2-2-2V7c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3c-1.1 0-2 .9-2 2v5h1.33L4 19h1l.67-2h12.67l.66 2h1l.67-2H22v-5zm-4-2h-5V7h5v3zM6 7h5v3H6V7zm-2 5h16v3H4v-3z" fill="#EFEFEF"></path></g></svg>
+                <%= property.bedrooms %>
+              </p>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

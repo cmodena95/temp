@@ -1,0 +1,14 @@
+<div class="col-xs-12 col-lg-6">
+  <%= cl_image_tag @property.main_photo.key %>
+
+  <% @property.photos %>
+</div>
+
+<div class="col-xs-12 col-lg-6">
+  <div class="container">
+    <h2><%= @property.title %></h2>
+    <p><%= @property.description %></p>
+    <%= link_to "Back", root_path, class: "btn-black" %>
+    <%= link_to "Enquire", "#", class: "btn-white" %>
+  </div>
+</div>
