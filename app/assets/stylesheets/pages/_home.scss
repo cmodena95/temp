@@ -6,8 +6,28 @@
   background-position-y: 20%;
 }
 
+.home-content {
+  display: flex;
+
+  .property-card p {
+    overflow:hidden;
+    line-height: 2rem;
+    max-height: 8rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .banner {
     padding: 15% 0 15% 0;
+  }
+
+  .home-content {
+    display: block;
   }
 }
