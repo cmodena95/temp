@@ -1,5 +1,9 @@
-.carousel-item {
-  height: 560px;
+.show-content {
+  display: flex;
+}
+
+.carousel-item, .slide {
+  height: 550px;
 }
 
 .carousel-img {
@@ -25,8 +29,13 @@
   width: 30px;
 }
 
-.slide {
-  height: 560px;
+.show-info {
+  text-align: right;
+
+  & > p {
+    max-height: 250px;
+    overflow: scroll;
+  }
 }
 
 .show-icons {
@@ -35,7 +44,34 @@
   width: 100%;
 }
 
-.scrollable {
-  max-height: 250px;
-  overflow: scroll;
+
+// mobile view
+@media screen and (max-width: 400px) {
+  .show-content {
+    display: block;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .show-info {
+    text-align: left;
+
+    & > p {
+      all: unset;
+    }
+
+    .btn-black {
+      display: none;
+    }
+  }
+
+  .show-icons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .carousel-item, .slide {
+    height: 500px;
+  }
 }

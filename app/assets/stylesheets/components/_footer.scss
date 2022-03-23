@@ -32,9 +32,11 @@
 }
 
 
+// mobile view
 @media screen and (max-width: 400px) {
   .footer {
     padding: 15% 0 5% 0;
+    display: block;
 
     .container {
       display: inline-block;
@@ -56,7 +58,7 @@
 
     input {
       margin-bottom: 0.5rem;
-      height: 32px;
+      height: 43px;
     }
   }
 }
