@@ -1,10 +1,10 @@
 <div class="navbar" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
-  <%= link_to "Back", root_path, class: "btn-black-solid", data: {"navbar-target": "button" } %>
+  <%= link_to "Back", root_path, class: "btn-black-solid", style: "opacity: 0.8;", data: {"navbar-target": "button" } %>
 </div>
 
 <div class="show-content">
   <div class="col-xs-12 col-lg-7 p-0">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" interval="10000">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" interval="20000">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -74,9 +74,9 @@
 
       <p class="scrollable"><%= @property.description %></p>
 
-      <div class="mt-3">
+      <div class="mt-4">
         <%= link_to "Back", root_path, class: "btn-black" %>
-        <%= link_to "Enquire", "#", class: "btn-white" %>
+        <%= link_to "Enquire", "#", class: "btn-white ml-1" %>
       </div>
     </div>
   </div>

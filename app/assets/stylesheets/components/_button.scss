@@ -1,5 +1,6 @@
 .btn-black, .btn-white {
   display: inline-block;
+  border-radius: 2px;
 }
 
 .btn-black {
@@ -27,4 +28,5 @@
   padding: 10px 34px;
   text-decoration: none;
   transition: 0.5s all ease;
+  border-radius: 2px;
 }
