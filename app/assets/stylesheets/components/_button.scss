@@ -8,6 +8,13 @@
   border: 2px solid $white;
   background-color: transparent;
   padding: 8px 32px;
+  transition: ease 0.4s all;
+  text-shadow: none;
+
+  &:hover {
+    background-color: $white;
+    color: black;
+  }
 }
 
 .btn-white {
@@ -16,9 +23,11 @@
   padding: 10px 34px;
   text-decoration: none;
   text-shadow: none;
+  transition: ease 0.4s all;
 
   &:hover {
-    color: $black;
+    color: $white;
+    background-color: transparent;
   }
 }
 
