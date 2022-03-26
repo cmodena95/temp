@@ -8,6 +8,15 @@
 
   p {
     margin: 0;
+    overflow:hidden;
+    line-height: 2rem;
+    max-height: 8rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
   }
 
   ul {
@@ -27,10 +36,11 @@
   width: 100%;
   height: 100%;
   padding: 2rem;
-  /*animate*/
   transition: all .2s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-/* hover effect*/
 .property-card:hover .overlay{
   opacity: 0;
 }

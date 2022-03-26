@@ -40,13 +40,28 @@
 
 .show-icons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
+}
+
+.show-location {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 
 // mobile view
 @media screen and (max-width: 400px) {
+  #phantom-li {
+    display: none;
+  }
+
+  .show-location {
+    justify-content: flex-start;
+    margin: 13px 0;
+  }
+
   .show-content {
     display: block;
 
