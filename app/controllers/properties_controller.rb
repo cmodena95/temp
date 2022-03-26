@@ -1,34 +1,57 @@
 class PropertiesController < ApplicationController
+  before_action :set_property, except: [:new, :create]
+
   def new
-    # raise
     @property = Property.new
     authorize @property
   end
 
   def create
-    @property = Property.new(properties_params)
+    @property = Property.new(property_params)
     authorize @property
     if @property.save
-      redirect_to dashboard_path
+      redirect_to property_path(@property)
     else
       render :new
     end
   end
 
   def show
-    @property = Property.find(params[:id])
     authorize @property
   end
 
   def destroy
-    @property = Property.find(params[:id])
     @property.destroy
     authorize @property
   end
 
+  def edit
+    authorize @property
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    authorize @property
+    if @property.update(property_params)
+      redirect_to property_path(@property)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @property.destroy
+    authorize @property
+    redirect_to dashboard_path
+  end
+
   private
   
-  def properties_params
+  def property_params
     params.require(:property).permit(:title, :description, :location, :price, :bedrooms, :bathrooms, :main_photo, photos: [])
+  end
+
+  def set_property
+    @property = Property.find(params[:id])
   end
 end

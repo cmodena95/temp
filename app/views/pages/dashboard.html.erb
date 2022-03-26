@@ -20,8 +20,8 @@
 
         <div class="dashboard-btns">
           <%= link_to "View", property_path(property), class: "btn-black-solid" %>
-          <%= link_to "Edit", property_path(property), method: :patch, class: "btn-black-solid my-2 px-12" %>
-          <%= link_to "Delete", property_path(property), method: :delete, class: "btn-black-solid" %>
+          <%= link_to "Edit", edit_property_path(property), class: "btn-black-solid my-2 px-12" %>
+          <%= button_to "Delete", property_path(property), method: :delete, class: "btn-black-solid" %>
         </div>
 
         <div class="overlay">

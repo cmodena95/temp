@@ -32,4 +32,9 @@
   text-decoration: none;
   transition: 0.5s all ease;
   border-radius: 2px;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
 }

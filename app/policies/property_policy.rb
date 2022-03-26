@@ -16,4 +16,16 @@ class PropertyPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def destroy?
+    @user.admin
+  end
+
+  def edit?
+    @user.admin
+  end
+
+  def update?
+    edit?
+  end
 end
