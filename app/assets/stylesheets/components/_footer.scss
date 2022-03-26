@@ -31,6 +31,16 @@
   justify-content: flex-end;
 }
 
+.sign-out {
+  background-color: transparent;
+  color: white;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 
 // mobile view
 @media screen and (max-width: 400px) {
