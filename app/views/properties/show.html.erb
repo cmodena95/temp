@@ -38,7 +38,7 @@
   <div class="col-xs-12 col-lg-5">
     <div class="container py-3 show-info">
       <h2><%= @property.title %></h2>
-      <h3>$<%= @property.price.to_i == @property.price ? number_with_delimiter(@property.price.to_i, :delimiter => ',') : number_with_delimiter(@property.price, :delimiter => ',') %></h3>
+      <h3>$ <%= @property.price.to_i == @property.price ? number_with_delimiter(@property.price.to_i, :delimiter => ',') : number_with_delimiter(@property.price, :delimiter => ',') %></h3>
 
       <ul class="show-icons mt-4">
         <li></li><li></li><li></li>
