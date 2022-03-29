@@ -5,8 +5,8 @@ class CreateProperties < ActiveRecord::Migration[7.0]
       t.text :description
       t.float :price
       t.string :location
-      t.integer :bedrooms
-      t.integer :bathrooms
+      t.integer :number_of_bedrooms
+      t.integer :number_of_bathrooms
 
       t.timestamps
     end

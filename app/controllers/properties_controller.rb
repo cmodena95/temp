@@ -20,11 +20,6 @@ class PropertiesController < ApplicationController
     authorize @property
   end
 
-  def destroy
-    @property.destroy
-    authorize @property
-  end
-
   def edit
     authorize @property
   end
@@ -40,8 +35,8 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
-    @property.destroy
     authorize @property
+    @property.destroy
     redirect_to dashboard_path
   end
 
