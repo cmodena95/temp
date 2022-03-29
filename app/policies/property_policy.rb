@@ -10,7 +10,7 @@ class PropertyPolicy < ApplicationPolicy
   end
 
   def create?
-    @user.admin
+    @user
   end
   
   def show?
@@ -18,11 +18,11 @@ class PropertyPolicy < ApplicationPolicy
   end
 
   def destroy?
-    @user.admin
+    @user
   end
 
   def edit?
-    @user.admin
+    @user
   end
 
   def update?

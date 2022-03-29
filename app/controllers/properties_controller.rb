@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :set_property, except: [:new, :create]
+  before_action :check_user, only: [:edit, :new]
 
   def new
     @property = Property.new
@@ -48,5 +50,9 @@ class PropertiesController < ApplicationController
 
   def set_property
     @property = Property.find(params[:id])
+  end
+
+  def check_user
+    raise ActionController::RoutingError.new('Not Found') unless user_signed_in?
   end
 end
