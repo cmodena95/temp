@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   include Pundit
-  skip_before_action :authenticate_user!
   after_action :verify_policy_scoped
   
   def home

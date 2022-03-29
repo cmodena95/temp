@@ -1,5 +1,4 @@
 class PropertiesController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_property, except: [:new, :create]
   before_action :check_user, only: [:edit, :new]
 
